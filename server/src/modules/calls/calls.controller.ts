@@ -1,7 +1,7 @@
 import type { Request, Response } from "express";
-import { CallsService } from "./calls.service";
-import type { ICallCreateCommand } from "./dtos/ICallCreateCommand";
-import type { ICallEditCommand } from "./dtos/ICallEditCommand";
+import { CallsService } from "./calls.service.js";
+import type { ICallCreateCommand } from "./dtos/ICallCreateCommand.js";
+import type { ICallEditCommand } from "./dtos/ICallEditCommand.js";
 
 export class CallsController {
 

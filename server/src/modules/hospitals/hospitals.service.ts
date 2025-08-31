@@ -1,9 +1,9 @@
-import { db } from "src/db";
-import type { IPaginationParams } from "../calls/dtos/IPaginationParams";
+import { db } from "src/db/index.js";
+import type { IPaginationParams } from "../calls/dtos/IPaginationParams.js";
 import { count, eq } from "drizzle-orm/sql";
-import { chamado, hospital } from "src/db/schema";
-import type { IHospitalCreateCommand } from "./dtos/IHospitalCreateCommand";
-import type { IHospitalEditCommand } from "./dtos/IHospitalEditCommand";
+import { chamado, hospital } from "src/db/schema.js";
+import type { IHospitalCreateCommand } from "./dtos/IHospitalCreateCommand.js";
+import type { IHospitalEditCommand } from "./dtos/IHospitalEditCommand.js";
 
 export class HospitalsService {
 

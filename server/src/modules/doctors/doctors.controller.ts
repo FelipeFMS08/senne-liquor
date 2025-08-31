@@ -1,7 +1,7 @@
 import type { Request, Response } from "express";
-import { DoctorsService } from "./doctors.service";
-import type { IDoctorCreateCommand } from "./dtos/IDoctorCreateCommand";
-import type { IDoctorEditCommand } from "./dtos/IDoctorEditCommand";
+import { DoctorsService } from "./doctors.service.js";
+import type { IDoctorCreateCommand } from "./dtos/IDoctorCreateCommand.js";
+import type { IDoctorEditCommand } from "./dtos/IDoctorEditCommand.js";
 
 export class DoctorsController {
 

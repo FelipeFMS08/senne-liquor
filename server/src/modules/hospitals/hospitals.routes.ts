@@ -1,7 +1,7 @@
 
 import { Router } from "express";
-import { HospitalsController } from "./hospitals.controller";
-import { isAuthenticated } from "src/middlewares/isAuthenticated";
+import { HospitalsController } from "./hospitals.controller.js";
+import { isAuthenticated } from "src/middlewares/isAuthenticated.js";
 
 const hospitalsRoutes = Router();
 const hospitalsController = new HospitalsController();

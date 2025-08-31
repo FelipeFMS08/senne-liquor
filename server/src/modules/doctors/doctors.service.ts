@@ -1,9 +1,9 @@
-import { db } from "src/db";
-import { chamado, medico } from "src/db/schema";
-import type { IDoctorCreateCommand } from "./dtos/IDoctorCreateCommand";
+import { db } from "src/db/index.js";
+import { chamado, medico } from "src/db/schema.js";
+import type { IDoctorCreateCommand } from "./dtos/IDoctorCreateCommand.js";
 import { count, eq } from "drizzle-orm";
-import type { IDoctorEditCommand } from "./dtos/IDoctorEditCommand";
-import type { IPaginationParams } from "../calls/dtos/IPaginationParams";
+import type { IDoctorEditCommand } from "./dtos/IDoctorEditCommand.js";
+import type { IPaginationParams } from "../calls/dtos/IPaginationParams.js";
 
 
 export class DoctorsService {

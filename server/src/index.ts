@@ -1,13 +1,11 @@
 import express from "express";
 import 'dotenv/config';
-import { drizzle } from 'drizzle-orm/libsql';
 import cors from 'cors';
-import { toNodeHandler, fromNodeHeaders } from "better-auth/node";
-import { auth } from "./lib/auth";
-import { isAuthenticated } from "./middlewares/isAuthenticated";
-import { callsRoutes } from "./modules/calls/calls.routes";
-import { hospitalsRoutes } from "./modules/hospitals/hospitals.routes";
-import { doctorsRoutes } from "./modules/doctors/doctors.routes";
+import { toNodeHandler } from "better-auth/node";
+import { auth } from "./lib/auth.js";
+import { callsRoutes } from "./modules/calls/calls.routes.js";
+import { hospitalsRoutes } from "./modules/hospitals/hospitals.routes.js";
+import { doctorsRoutes } from "./modules/doctors/doctors.routes.js";
 
 const port = process.env.PORT || 3333;
 const authHandler = toNodeHandler(auth);
@@ -43,10 +41,7 @@ app.all('/api/auth/*splat', (req, res) => {
       res.json(result);
     } catch (error) {
       console.error('❌ Manual signup error:', error);
-      res.status(500).json({ 
-        error: error.message,
-        stack: error.stack 
-      });
+      res.status(500);
     }
   });
 

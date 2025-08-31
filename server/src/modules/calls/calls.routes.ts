@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { CallsController } from "./calls.controller";
-import { isAuthenticated } from "src/middlewares/isAuthenticated";
+import { CallsController } from "./calls.controller.js";
+import { isAuthenticated } from "src/middlewares/isAuthenticated.js";
 
 const callsRoutes = Router();
 const callsController = new CallsController();

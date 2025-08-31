@@ -1,6 +1,6 @@
 import { fromNodeHeaders } from "better-auth/node";
 import { type NextFunction, type Request, type Response } from "express";
-import { auth } from "src/lib/auth";
+import { auth } from "src/lib/auth.js";
 
 
 export async function isAuthenticated(

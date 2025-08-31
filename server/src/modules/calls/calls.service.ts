@@ -1,9 +1,9 @@
-import { db } from "src/db";
-import type { IPaginationParams } from "./dtos/IPaginationParams";
-import { chamado, hospital, medico } from "src/db/schema";
+import { db } from "src/db/index.js";
+import type { IPaginationParams } from "./dtos/IPaginationParams.js";
+import { chamado, hospital, medico } from "src/db/schema.js";
 import { and, count, eq, like, or } from "drizzle-orm/sql";
-import type { ICallCreateCommand } from "./dtos/ICallCreateCommand";
-import type { ICallEditCommand } from "./dtos/ICallEditCommand";
+import type { ICallCreateCommand } from "./dtos/ICallCreateCommand.js";
+import type { ICallEditCommand } from "./dtos/ICallEditCommand.js";
 
 
 export class CallsService {
