@@ -1,0 +1,163 @@
+{
+  "id": "00000000-0000-0000-0000-000000000000",
+  "prevId": "",
+  "version": "6",
+  "dialect": "sqlite",
+  "tables": {
+    "HOSPITAL": {
+      "name": "HOSPITAL",
+      "columns": {
+        "CD_HOSPITAL": {
+          "autoincrement": false,
+          "name": "CD_HOSPITAL",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "NM_HOSPITAL": {
+          "autoincrement": false,
+          "name": "NM_HOSPITAL",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "NR_LATITUDE": {
+          "autoincrement": false,
+          "name": "NR_LATITUDE",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "NR_LONGITUDE": {
+          "autoincrement": false,
+          "name": "NR_LONGITUDE",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "MEDICO": {
+      "name": "MEDICO",
+      "columns": {
+        "CD_MEDICO": {
+          "autoincrement": false,
+          "name": "CD_MEDICO",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "NM_MEDICO": {
+          "autoincrement": false,
+          "name": "NM_MEDICO",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "CHAMADO": {
+      "name": "CHAMADO",
+      "columns": {
+        "NR_CHAMADO": {
+          "autoincrement": false,
+          "name": "NR_CHAMADO",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "CD_HOSPITAL": {
+          "autoincrement": false,
+          "name": "CD_HOSPITAL",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "IE_TIPO_CHAMADO": {
+          "autoincrement": false,
+          "name": "IE_TIPO_CHAMADO",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "NM_PACIENTE": {
+          "autoincrement": false,
+          "name": "NM_PACIENTE",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "IE_SEXO": {
+          "autoincrement": false,
+          "name": "IE_SEXO",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "IE_STATUS_CHAMADO": {
+          "autoincrement": false,
+          "name": "IE_STATUS_CHAMADO",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "CD_MEDICO": {
+          "autoincrement": false,
+          "name": "CD_MEDICO",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {
+        "CHAMADO_CD_MEDICO_MEDICO_CD_MEDICO_fk": {
+          "name": "CHAMADO_CD_MEDICO_MEDICO_CD_MEDICO_fk",
+          "tableFrom": "CHAMADO",
+          "tableTo": "MEDICO",
+          "columnsFrom": [
+            "CD_MEDICO"
+          ],
+          "columnsTo": [
+            "CD_MEDICO"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "CHAMADO_CD_HOSPITAL_HOSPITAL_CD_HOSPITAL_fk": {
+          "name": "CHAMADO_CD_HOSPITAL_HOSPITAL_CD_HOSPITAL_fk",
+          "tableFrom": "CHAMADO",
+          "tableTo": "HOSPITAL",
+          "columnsFrom": [
+            "CD_HOSPITAL"
+          ],
+          "columnsTo": [
+            "CD_HOSPITAL"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    }
+  },
+  "views": {},
+  "enums": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  }
+}
