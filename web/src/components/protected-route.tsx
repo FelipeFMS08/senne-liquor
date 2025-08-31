@@ -1,6 +1,6 @@
 import { authClient } from "@/lib/auth-client";
 import type { ReactNode } from "react";
-import { Navigate, replace } from "react-router";
+import { Navigate } from "react-router";
 
 interface ProtectedRouteProps {
   children: ReactNode;
