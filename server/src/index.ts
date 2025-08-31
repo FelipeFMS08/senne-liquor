@@ -12,7 +12,7 @@ const authHandler = toNodeHandler(auth);
 const app = express();
 
 app.use(cors({
-  origin: "http://localhost:4173",
+  origin: "https://senne-liquor.vercel.app",
   credentials: true
 }));
 app.use(express.json());
