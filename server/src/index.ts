@@ -12,14 +12,13 @@ const authHandler = toNodeHandler(auth);
 const app = express();
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: "https://senne-liquor.vercel.app",
   credentials: true
 }));
 app.use(express.json());
 
 app.all('/api/auth/*splat', (req, res) => {
     console.log(`🔐 BetterAuth handling: ${req.method} ${req.url}`);
-    console.log('🔐 Request body:', req.body);
 
     authHandler(req, res).catch(err => {
       console.error('BetterAuth handler error:', err);
@@ -30,7 +29,6 @@ app.all('/api/auth/*splat', (req, res) => {
 
   app.post('/api/test-signup', async (req, res) => {
     console.log('🧪 Testing manual signup...');
-    console.log('Request body:', req.body);
     
     try {
       const result = await auth.api.signUpEmail({
