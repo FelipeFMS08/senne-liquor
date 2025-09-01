@@ -10,7 +10,7 @@ export const auth = betterAuth({
   emailAndPassword: {
     enabled: true,
   },
-  trustedOrigins: ["https://senne-liquor.vercel.app"],
+  trustedOrigins: ["https://senne-liquor.vercel.app", "http://localhost:8081"],
   plugins: [
     jwt(),
   ]

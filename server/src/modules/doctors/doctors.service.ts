@@ -50,6 +50,7 @@ export class DoctorsService {
       where: eq(chamado.cdMedico, id),
       with: {
         medico: {},
+        hospital: {}
       }
     });
     return callsByDoctor;
