@@ -23,6 +23,7 @@ app.use(cors({
 }));
 
 app.use(express.json());
+app.set('trust proxy', 1); 
 
 app.all('/api/auth/*splat', (req, res) => {
     console.log(`🔐 BetterAuth handling: ${req.method} ${req.url}`);

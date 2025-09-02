@@ -21,15 +21,14 @@ export const auth = betterAuth({
   advanced: {
     useSecureCookies: true, 
     crossSubDomainCookies: {
-      enabled: true,
-      domain: ".onrender.com", 
+      enabled: false
     },
     cookies: {
       session_token: {
         name: "better-auth-session",
-        attributes: { httpOnly: true, secure: true },
+        attributes: { httpOnly: true, secure: true, sameSite: "none" },
       },
     },
-    defaultCookieAttributes: { httpOnly: true, secure: true },
+    defaultCookieAttributes: { httpOnly: true, secure: true, sameSite: "none" },
   },
 });
