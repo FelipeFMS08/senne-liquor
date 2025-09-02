@@ -12,11 +12,12 @@ const authHandler = toNodeHandler(auth);
 const app = express();
 
 app.use(cors({
-  origin: ["*"],
+  origin: ["http://localhost:5173", "https://senne-liquor.vercel.app/", "*", "http://localhost:8081"],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
 }));
+
 app.use(express.json());
 
 app.all('/api/auth/*splat', (req, res) => {
