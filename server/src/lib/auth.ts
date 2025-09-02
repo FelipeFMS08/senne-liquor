@@ -5,7 +5,7 @@ import { jwt } from "better-auth/plugins";
 
 export const auth = betterAuth({
   database: drizzleAdapter(db, {
-    provider: "sqlite",
+    provider: "sqlite"
   }),
   emailAndPassword: {
     enabled: true,
@@ -13,23 +13,23 @@ export const auth = betterAuth({
   trustedOrigins: [
     "http://localhost:5173",
     "http://localhost:8081",
-    "https://senne-liquor.vercel.app",
+    "https://senne-liquor.vercel.app"
   ],
-  plugins: [jwt()],
+  plugins: [
+    jwt(),
+  ],
   advanced: {
-    useSecureCookies: true,
+    useSecureCookies: true, 
     crossSubDomainCookies: {
       enabled: true,
-      domain: ".onrender.com",
+      domain: ".onrender.com", 
     },
     cookies: {
       session_token: {
         name: "better-auth-session",
-        attributes: {
-          httpOnly: true,
-          secure: true,
-        },
+        attributes: { httpOnly: true, secure: true },
       },
     },
+    defaultCookieAttributes: { httpOnly: true, secure: true },
   },
 });

@@ -8,4 +8,7 @@ if (!backendUrl) {
 
 export const authClient = createAuthClient({
   baseURL: backendUrl,
+  fetchOptions: {
+    credentials: "include",
+  },
 });
